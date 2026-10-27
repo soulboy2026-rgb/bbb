@@ -1,0 +1,20 @@
+{
+  "name": "nobel-2026-ghost-hunter",
+  "private": true,
+  "type": "module",
+  "description": "Code-generated explainer video on the 2026 Nobel Prize in Physics (Francis Halzen, IceCube)",
+  "scripts": {
+    "map": "node tools/build-map.mjs",
+    "render": "node tools/render.mjs",
+    "serve": "python3 -m http.server 8123"
+  },
+  "dependencies": {
+    "@fontsource/noto-sans-sc": "5.2.9",
+    "@fontsource/zcool-kuaile": "5.2.8",
+    "topojson-client": "3.1.0",
+    "world-atlas": "2.0.2"
+  },
+  "devDependencies": {
+    "d3-geo": "^3.1.1"
+  }
+}
