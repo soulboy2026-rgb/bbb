@@ -525,7 +525,7 @@ export function discover(ctx, S) {
     const blink = 0.75 + 0.25 * Math.sin(t * 10);
     card(ctx, 410, 135, 1100, 80, { alpha: a4 * blink, fill: "rgba(200,30,50,0.85)", stroke: "#ff9aa5", r: 16 });
     text(ctx, "警报！IceCube-170922A · 2017 年 9 月 22 日", 960, 176, { size: 38, weight: 900, alpha: a4 });
-    chip(ctx, "从探测到发出警报：不到 1 分钟", 1560, 900, { alpha: a4 * S.p(4, 0.4, 3.0), size: 32, stroke: C.yellow, fill: rgba(C.yellow, 0.14) });
+    chip(ctx, "从探测到发出警报：不到 1 分钟", 1600, 855, { alpha: a4 * S.p(4, 0.4, 3.0), size: 28, stroke: C.yellow, fill: rgba(C.yellow, 0.14) });
   }
 
   // 5: Fermi looks, finds a flaring blazar
@@ -632,7 +632,7 @@ export function discover(ctx, S) {
       if (x > scan) break;
       const y = 540 + Math.sin(x * 0.003) * 30;
       const core = Math.exp(-Math.pow((x - W / 2) / 500, 2));
-      glow(ctx, x, y, 90 + 70 * core, k % 2 ? C.ice : C.purple, a9 * (0.35 + 0.5 * core));
+      glow(ctx, x, y, 90 + 60 * core, k % 2 ? C.ice : C.purple, a9 * (0.22 + 0.28 * core));
     }
     if (scan < W + 100) {
       ctx.save();
@@ -796,13 +796,13 @@ export function why(ctx, S) {
     ];
     prizes.forEach(([y, cap], k) => {
       const a = a6 * S.p(6, 0.4, 0.3 + k * 0.45);
-      const x = 280 + k * 300;
+      const x = 240 + k * 290;
       drawMedal(ctx, x, 480, (k === 4 ? 110 : 85) * ease.back(S.raw(6, 0.5, 0.3 + k * 0.45)), t + k, { alpha: a, label: y });
       text(ctx, y, x, 630, { size: 38, weight: 900, color: C.gold, alpha: a });
       text(ctx, cap, x, 685, { size: 28, color: C.dim, alpha: a });
     });
-    drawGhost(ctx, 1700, 470, 70, t, { alpha: a6 * S.p(6, 0.4, 3.0), medal: true, wave: 1 });
-    chip(ctx, "诺奖常客 × 5", 1700, 640, { alpha: a6 * S.p(6, 0.4, 3.4), size: 36, stroke: C.gold, color: C.gold, fill: rgba(C.gold, 0.14) });
+    drawGhost(ctx, 1720, 470, 70, t, { alpha: a6 * S.p(6, 0.4, 3.0), medal: true, wave: 1 });
+    chip(ctx, "诺奖常客 × 5", 1720, 650, { alpha: a6 * S.p(6, 0.4, 3.4), size: 36, stroke: C.gold, color: C.gold, fill: rgba(C.gold, 0.14) });
   }
 }
 

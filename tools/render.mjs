@@ -103,7 +103,7 @@ async function video(port) {
     const browser = await chromium.launch();
     const page = await openPage(browser, port);
     await run("ffmpeg", ["-y", "-loglevel", "error", "-f", "image2pipe", "-framerate", String(fps), "-c:v", "mjpeg", "-i", "-",
-      "-c:v", "libx264", "-preset", "medium", "-crf", "19", "-pix_fmt", "yuv420p", "-r", String(fps), join(segDir, `seg${w}.mp4`)], {
+      "-c:v", "libx264", "-preset", "medium", "-crf", "24", "-tune", "animation", "-pix_fmt", "yuv420p", "-r", String(fps), join(segDir, `seg${w}.mp4`)], {
       stdin: async (stdin) => {
         for (let f = from; f < to; f++) {
           await page.evaluate((t) => window.renderAt(t), f / fps);
